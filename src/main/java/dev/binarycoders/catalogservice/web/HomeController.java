@@ -2,11 +2,9 @@ package dev.binarycoders.catalogservice.web;
 
 import dev.binarycoders.catalogservice.config.PolarProperties;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/")
 public class HomeController {
 
     private final PolarProperties polarProperties;
@@ -15,8 +13,9 @@ public class HomeController {
         this.polarProperties = polarProperties;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public String getGreeting() {
         return polarProperties.getGreeting();
     }
+
 }
